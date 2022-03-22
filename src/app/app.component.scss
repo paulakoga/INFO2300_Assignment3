@@ -1,0 +1,21 @@
+:host{
+    background: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .title{
+        padding-left: 10px;
+    }
+
+    mat-drawer-container{
+        background: rgb(228, 228, 228);
+        flex: 1;
+    }
+
+    mat-nav-list mat-icon{
+        padding-right: 10px;
+    }
+
+
+}

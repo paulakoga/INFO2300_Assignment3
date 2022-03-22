@@ -1,0 +1,43 @@
+<mat-toolbar>
+  <button (click)="drawer.toggle()" mat-icon-button class="icon"
+    aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="title">{{ title }}</span>
+</mat-toolbar>
+<mat-drawer-container class="container">
+  <mat-drawer #drawer mode="over">
+
+    <mat-nav-list>
+      <div>
+        <a mat-list-item routerLink="home" (click)="drawer.toggle()">
+          <mat-icon mat-list-icon>home</mat-icon>
+          Home
+        </a>
+      </div>
+      <div>
+        <a mat-list-item routerLink="concert-list" (click)="drawer.toggle()">
+          <mat-icon mat-list-icon>event</mat-icon>
+          Concerts
+        </a>
+      </div>
+      <a mat-list-item routerLink="song-list" (click)="drawer.toggle()">
+        <mat-icon mat-list-icon>music_note</mat-icon>
+        Songs
+      </a>
+      <a mat-list-item routerLink="setlist-list" (click)="drawer.toggle()">
+        <mat-icon mat-list-icon>queue_music</mat-icon>
+        Setlists
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="about" (click)="drawer.toggle()">
+        <mat-icon mat-list-icon>info_outline</mat-icon>
+        About
+      </a>
+    </mat-nav-list>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet (activate)="changeTitle($event.pageTitle)"></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
